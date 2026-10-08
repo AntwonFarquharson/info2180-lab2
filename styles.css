@@ -1,10 +1,11 @@
-/* ===== Base / Reset ===== */
+/* reset default browser spacing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* default text look */
 body {
     font-size: 18px;
     color: #2D3748;
@@ -13,7 +14,7 @@ body {
     line-height: 1.6;
 }
 
-/* ===== CSS Grid Layout ===== */
+/* main grid layout */
 .container {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -29,13 +30,13 @@ body {
     padding: 0 20px;
 }
 
-/* ===== Header ===== */
+/* header */
 header {
     grid-area: header;
     background-color: #3C8527;
     color: #FFFFFF;
     padding: 30px;
-    display: flex;                /* Flexbox for centering */
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 25px;
@@ -43,6 +44,7 @@ header {
     margin-top: 15px;
 }
 
+/* circle photo */
 .profile-pic {
     width: 130px;
     height: 130px;
@@ -67,7 +69,7 @@ header p {
     font-size: 18px;
 }
 
-/* ===== Main Content ===== */
+/* blog posts */
 main {
     grid-area: main;
     padding: 10px 20px;
@@ -83,6 +85,7 @@ article h2 {
     margin-bottom: 5px;
 }
 
+/* date and author */
 .meta {
     color: #667267;
     font-size: 16px;
@@ -90,7 +93,7 @@ article h2 {
     font-style: italic;
 }
 
-/* Floating images inside blog posts */
+/* blog images */
 article img {
     width: 200px;
     height: auto;
@@ -112,13 +115,15 @@ article p {
     text-align: justify;
 }
 
-/* ===== Sidebar ===== */
+/* sidebar */
 aside {
     grid-area: aside;
     padding: 10px 0;
 }
 
-aside section {
+aside .about,
+aside .social,
+aside .archives {
     margin-bottom: 25px;
 }
 
@@ -160,7 +165,7 @@ aside ul li a:hover {
     text-decoration: underline;
 }
 
-/* ===== Footer ===== */
+/* footer */
 footer {
     grid-area: footer;
     background-color: #28651C;
@@ -171,7 +176,7 @@ footer {
     margin-bottom: 15px;
 }
 
-/* ===== Clearfix for floated images ===== */
+/* keeps each article from overflowing into the next */
 article::after {
     content: "";
     display: table;
