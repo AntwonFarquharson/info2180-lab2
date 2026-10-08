@@ -1,0 +1,179 @@
+/* ===== Base / Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+    color: #2D3748;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    line-height: 1.6;
+}
+
+/* ===== CSS Grid Layout ===== */
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "main   aside"
+        "footer footer";
+    gap: 20px;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== Header ===== */
+header {
+    grid-area: header;
+    background-color: #3C8527;
+    color: #FFFFFF;
+    padding: 30px;
+    display: flex;                /* Flexbox for centering */
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid #FFFFFF;
+    object-fit: cover;
+}
+
+.header-text {
+    text-align: left;
+}
+
+header h1 {
+    font-size: 39px;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+/* ===== Main Content ===== */
+main {
+    grid-area: main;
+    padding: 10px 20px;
+}
+
+article {
+    margin-bottom: 40px;
+}
+
+article h2 {
+    font-size: 34px;
+    color: #28651C;
+    margin-bottom: 5px;
+}
+
+.meta {
+    color: #667267;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* Floating images inside blog posts */
+article img {
+    width: 200px;
+    height: auto;
+    margin: 5px 0 10px 20px;
+    border-radius: 6px;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+    margin: 5px 20px 10px 0;
+}
+
+article p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* ===== Sidebar ===== */
+aside {
+    grid-area: aside;
+    padding: 10px 0;
+}
+
+aside section {
+    margin-bottom: 25px;
+}
+
+aside h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+}
+
+.about {
+    background-color: #E2E8F0;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.about h3 {
+    color: #333322;
+}
+
+.social h3,
+.archives h3 {
+    color: #28651C;
+}
+
+aside ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+aside ul li {
+    margin-bottom: 6px;
+}
+
+aside ul li a {
+    color: #2879B8;
+    text-decoration: none;
+}
+
+aside ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+    grid-area: footer;
+    background-color: #28651C;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* ===== Clearfix for floated images ===== */
+article::after {
+    content: "";
+    display: table;
+    clear: both;
+}
